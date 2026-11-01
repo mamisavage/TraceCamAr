@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#10131a" />
+  <title>TraceCam — Çizim Yardımcısı</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <video id="camera" autoplay playsinline muted></video>
+    <div id="overlay" class="overlay" aria-label="Çizim referansı"><img id="reference" alt="Seçilen referans" draggable="false" /></div>
+    <div id="empty" class="empty">Kamerayı aç, ardından çizmek istediğin fotoğrafı seç.</div>
+    <header class="topbar"><strong>TraceCam</strong><span id="status">Kamera kapalı</span></header>
+    <section id="controls" class="controls">
+      <div class="buttons">
+        <button id="start">📷 Kamerayı aç</button>
+        <label class="file-button">🖼 Fotoğraf seç<input id="file" type="file" accept="image/*" /></label>
+      </div>
+      <label>Opaklık <output id="opacityValue">50%</output><input id="opacity" type="range" min="0" max="100" value="50" /></label>
+      <label>Boyut <output id="scaleValue">100%</output><input id="scale" type="range" min="20" max="300" value="100" /></label>
+      <label>Döndürme <output id="rotationValue">0°</output><input id="rotation" type="range" min="-180" max="180" value="0" /></label>
+      <div class="buttons"><button id="lock">🔓 Konumu kilitle</button><button id="reset">↺ Sıfırla</button><button id="hide">👁 Kontrolleri gizle</button></div>
+      <small>Fotoğrafı tek parmakla sürükle. Telefonu sabit tutarak çiz.</small>
+    </section>
+    <button id="show" class="show hidden">⚙ Kontroller</button>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
